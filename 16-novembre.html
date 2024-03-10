@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+            google.charts.load('current', {
+        'packages': ['sankey']
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          ['Rosemont–La Petite-Patrie', 'Rivière-des-Prairies–Pointe-aux-Trembles', 2],
+          ['Rosemont–La Petite-Patrie', 'Montréal-Nord', 1],
+          ['Rosemont–La Petite-Patrie', 'Ahuntsic-Cartierville', 5],
+          ['Rosemont–La Petite-Patrie', 'Anjou', 1],
+          ['Rosemont–La Petite-Patrie', 'Saint-Léonard', 3],
+          ['Rosemont–La Petite-Patrie', 'Villeray–Saint-Michel–Parc-Extension', 32],
+          ['Rosemont–La Petite-Patrie', 'Outremont', 2],
+          ['Rosemont–La Petite-Patrie', 'Côte-des-Neiges–Notre-Dame-de-Grâce', 7],
+          ['Rosemont–La Petite-Patrie', 'Mercier–Hochelaga-Maisonneuve', 21],
+          //['Rosemont–La Petite-Patrie', '.Rosemont–La Petite-Patrie', 16],
+          ['Rosemont–La Petite-Patrie', 'Plateau Mont-Royal', 36],
+		  ['Rosemont–La Petite-Patrie', '.Ville-Marie', 23],
+          ['Rosemont–La Petite-Patrie', 'Sud-Ouest', 6],
+          ['Rosemont–La Petite-Patrie', 'Verdun', 1],
+          //['Rosemont–La Petite-Patrie', 'LaSalle', 1],
+          //['Rosemont–La Petite-Patrie', 'Île-Bizard–Sainte-Geneviève', 1],
+          ['Rosemont–La Petite-Patrie', 'Saint-Laurent', 4],
+          //['Rosemont–La Petite-Patrie', 'Pierrefonds-Roxboro', 1],
+          ['Rosemont–La Petite-Patrie', 'Lachine', 2],
+          ['Ville-Marie', 'Rivière-des-Prairies–Pointe-aux-Trembles', 2],
+          //['Ville-Marie', 'Montréal-Nord', 1],
+          ['Ville-Marie', 'Ahuntsic-Cartierville', 8],
+          ['Ville-Marie', 'Anjou', 2],
+          //['Ville-Marie', 'Saint-Léonard', 3],
+          ['Ville-Marie', 'Villeray–Saint-Michel–Parc-Extension', 6],
+          ['Ville-Marie', 'Outremont', 3],
+          ['Ville-Marie', 'Côte-des-Neiges–Notre-Dame-de-Grâce', 15],
+          ['Ville-Marie', 'Mercier–Hochelaga-Maisonneuve', 18],
+          ['Ville-Marie', '.Rosemont–La Petite-Patrie', 25],
+		  ['Ville-Marie', 'Plateau Mont-Royal', 54],
+		  //['Ville-Marie', '.Ville-Marie', 73],
+          ['Ville-Marie', 'Sud-Ouest', 26],
+          ['Ville-Marie', 'Verdun', 12],
+          //['Ville-Marie', 'LaSalle', 2],
+          //['Ville-Marie', 'Île-Bizard–Sainte-Geneviève', 1],
+          ['Ville-Marie', 'Saint-Laurent', 1],
+          //['Ville-Marie', 'Pierrefonds-Roxboro', 1],
+          ['Ville-Marie', 'Lachine', 5]
+        ]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+  </body>
+</html>
+
